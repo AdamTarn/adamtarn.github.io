@@ -1,9 +1,4 @@
-const { JSDOM } = require('jsdom');
-const { window } = new JSDOM();
-const { document } = (new JSDOM('')).window;
-global.document = document;
-
-let $ = document.querySelector.bind(document);
+"use strict";
 
 let noun = [ "cat", "dog", "rock", "house" ];
 let verb = [ "looks at", "talks to", "helps", "steals" ];
@@ -21,27 +16,22 @@ function generate()
     let n1 = choose(noun);
     let v = choose(verb);
     let n2 = choose(noun);
-    $("#text").innerHTML += `The ${a} ${n1} ${v} the ${n2}.<br>`;
+    console.log(`The ${a} ${n1} ${v} the ${n2}.`);
     }
 
 function vocabulary()
     {
-    let text = '<h1>nouns</h1><ul>';
+    let text = 'nouns\n';
     for (let i=0; i < noun.length; i++)
-        text += '<li>' + noun[i];
-    text += '</ul>\n';
-    text += '<h1>adjectives</h1><ul>'
+        text += noun[i] + '\n';
+    text += 'adjectives\n'
     for (let i=0; i < adjective.length; i++)
-        text += '<li>' + adjective[i];
-    text += '</ul>\n';
-    text += '<h1>verbs</h1><ul>'
+        text += adjective[i] + '\n';
+    text += 'verbs\n'
     for (let i=0; i < verb.length; i++)
-        text += '<li>' + verb[i];
-    text += '</ul>\n';
-    $("#vocab").innerHTML = text;
+        text += verb[i] + '\n';
+    console.log(text);
     }
 
-window.onload = function () {
-    $("#generate").addEventListener('click',generate);
-    $("#vocabulary").addEventListener('click',vocabulary);
-    }
+generate();
+vocabulary();
