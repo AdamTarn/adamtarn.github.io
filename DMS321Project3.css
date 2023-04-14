@@ -1,0 +1,11 @@
+html{height:100%}
+body {background-image: url("CasinoBG3.jpg");
+            background-position: center;
+            background-repeat:no-repeat;
+}
+div{
+    grid-column-gap: 100px;
+}
+h4{
+    background-color:aliceblue;
+}
