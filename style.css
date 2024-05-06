@@ -1,0 +1,17 @@
+html, body {
+  margin: 0 auto;
+  padding: 0;
+}
+/* canvas {
+  display: block;
+} */
+button, input[type="file"] {
+  text-align:center;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.p5Canvas {
+  display: block;
+  margin: 0 auto;
+}
