@@ -40,7 +40,7 @@ fileInput.parent(buttonContainer);
 fileInput.class('p5button');
   
   fft = new p5.FFT(0.8, bins);
-  outputVolume(1);
+  outputVolume(0.2);
 }
 function setBgImage(){
   bg = bgImages[currentBgIndex];
