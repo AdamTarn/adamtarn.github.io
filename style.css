@@ -1,0 +1,27 @@
+html, body {
+  margin: 0 auto;
+  padding: 0;
+}
+/* canvas {
+  display: block;
+} */
+#button-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.p5button {
+  margin: 5px;
+}
+/* button, input[type="file"] { */
+/*   display: inline-flex;
+  justify-content:center;
+  align-items:center; */
+/*   margin: 0 auto;
+} */
+
+.p5Canvas {
+  display: block;
+  margin: 0 auto;
+}
