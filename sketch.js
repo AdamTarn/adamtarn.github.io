@@ -265,3 +265,36 @@ class Cube {
     directionalLight(127, 127, 127, 0, 1, 0);
   }
 }
+    this.x = x;
+    this.y = y;
+    this.z = z;
+    this.sidesX = sidesX;
+    this.sidesY = sidesY;
+    this.cenAmp = cenAmp;
+    this.ampColor = ampColor;
+    this.cenColor = cenColor;
+  }
+  //builds the blob
+  Show() {
+    fill(this.cenAmp);
+    smooth();
+    noStroke();
+    frameRate(75);
+    specularMaterial(this.cenColor);
+    ellipsoid(this.x / 1.25, this.y / 1.75, this.z,this.sidesX,this.sidesY);
+    shininess(100);
+    // print(this.y);
+  }
+  //builds the directional lights and mouse based light
+  Light() {
+    lights();
+    let xloc = mouseX - width / 2;
+    let yloc = mouseY - height / 2;
+    pointLight(127, 127, 127, xloc, yloc, 50);
+    directionalLight(127, 127, 127, 1, 1, 1);
+    directionalLight(127, 127, 127, 1, 0, 0);
+    directionalLight(127, 127, 127, -1, 0, 0);
+    directionalLight(127, 127, 127, -1, -1, -1);
+    directionalLight(127, 127, 127, 0, 1, 0);
+  }
+}
