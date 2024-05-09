@@ -35,9 +35,20 @@ playbutton.parent(buttonContainer);
 playbutton.mousePressed(togglePlay);
 playbutton.class('p5button');
 
+  let stopButton = createButton('Stop');
+stopButton.parent(buttonContainer);
+stopButton.mousePressed(stopMusic);
+stopButton.class('p5button');
+
+
 fileInput = createFileInput(handleFile);
 fileInput.parent(buttonContainer);
 fileInput.class('p5button');
+
+  let fullscreenButton = createButton('Fullscreen');
+fullscreenButton.parent(buttonContainer);
+fullscreenButton.mousePressed(toggleFullScreen);
+fullscreenButton.class('p5button');
   
   fft = new p5.FFT(0.8, bins);
   outputVolume(0.2);
@@ -58,7 +69,11 @@ function toggleFullScreen() {
     document.exitFullscreen();
   }
 }
-
+function stopMusic() {
+    if(song.isPlaying()){
+        song.stop();
+    }
+}
 document.addEventListener(
   'keydown',
   (e) => {
